@@ -1,0 +1,15 @@
+	<div id="home" class="header">
+		<div class="container">
+			<div class="h_logo"><img src="{{ url_for('static', filename=source.logo)}}" alt="" /></div> <!--Need to get from DB - -->
+			<div class="h_left">
+				<!-- <div class="h_phone">Тел: <a href="https://vk.com/ladymarlene"> vk.com/ladymarlene</a></div>-->
+				<div class="h_phone">{{header.city}} </div>
+				 <div class="h_phone"><a href="{{header.link}}"> {{header.infolink}}</a></div>
+				<div class="h_email">{{header.email}}</div>
+				
+				<!--{% for article in articles %}
+				
+				{% endfor %}-->
+			</div>
+		</div>
+	</div>
