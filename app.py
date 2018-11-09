@@ -4,7 +4,7 @@
 #import pymongo
 #from bson import BSON
 #from bson import json_util
-from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
+from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging,Markup #For work with HTTP and templates
 import requests # For HTTP requests
 #from functools import wraps # For lock access
 #from HTTP_basic_Auth import auths # For lock access
@@ -75,9 +75,19 @@ def main():
     #msg = py()
     #return render_template('index.html')
 
-	header={'phone':'777-777-7777','email':'e-mail: info@ladymarlene.ru','link':'https://vk.com/ladymarlene','infolink':'vk.com/ladymarlene','city':'г. Москва'}
-	source={'logo':'source/logo.png','block1':'img/05.jpg'}
-	return render_template('dashbord_lady.html', header=header,source=source)	
+	header={'phone':'777-777-7777','email':'e-mail: info@ladymarlene.ru','link':'https://vk.com/ladymarlene','infolink':'vk.com/ladymarlene','city':'г. Москва'} #_header.html
+	source={'logo':'source/logo.png','block1':'img/05.jpg'} #_block1.html
+	mob_menu={'pos0':'Меню'} #_h_menu.html
+	menu={'home':'ГЛАВНАЯ','glasses':'БОКАЛЫ','bottle':'БУТЫЛКИ','locks':'ЗАМОЧКИ','reviews':'ОТЗЫВЫ','work':'НАШИ РАБОТЫ','delivery':'ДОСТАВКА'} #_h_menu.html
+	block2={'b2_title':'Сегодня никогда не повторится…','b2_text':Markup(u'''<p><em>Это тот день, который вы ждете с трепетом и будете вспоминать всю жизнь. Сохранить память об этом важном событии и создать оригинальный аксессуар праздничного дня можно с помощью гравировки на свадебных бокалах, бутылках и замочках. Мы с радостью поможем сделать главный день в вашей жизни оригинальным и незабываемым!</em></p>'''),'b2_text2':Markup(u'''<em> День вашей свадьбы должен быть особенным и оставить прекрасные воспоминания!</em></p>
+<p style="text-align: center;"><em>Lady-MarLene оказывает услуги <strong>индивидуальной гравировки</strong>:</em><br />
+<em> &#8212; на <strong>бокалах</strong> для молодоженов,</em><br />
+<em> &#8212; на <strong>бутылках</strong> шампанского для дня свадьбы, в благодарность родителям, на первую годовщину и рождение первенца,</em><br />
+<em> &#8212; на <strong>замочках</strong></em></p>
+<p style="text-align: center;"><em>Мы любим и ценим свою работу, стараясь сделать ваш незабываемый день оригинальным!</em></p>''')} #_blokc2.html
+	
+	
+	return render_template('dashbord_lady.html', header=header,source=source,mob_menu=mob_menu,menu=menu,block2=block2)	
 	
 def py():
     #client = MongoClient("ds141786.mlab.com:41786", username = 'podarkin', password = 'podarkin', authSource = 'heroku_q51pzrtm')
