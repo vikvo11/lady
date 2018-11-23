@@ -1,11 +1,48 @@
-
-	<div id="glasses" class="block3">
+  <!--
+ <div id="glasses" class="block3">
 		<div class="container">
 			<h2>Гравировка на бокалах</h2>
 			<div class="b3_line">
-				<div class="b3_left">
-					<img src="{{ url_for('static', filename='img/01.jpg')}}" alt="" />
-				</div>
+
+				<div class="b3_right">
+					<div class="glasses">
+						<div class="b3_right_top">
+							<div class="b3_right_title">Выберите ваш бокал:</div>
+							
+	
+  <carousel sides="vm.sides.all" current="vm.sides.current"></carousel>
+
+
+
+  <button class="controls" ng-click="vm.controls.decrease();">Decrease Sides</button>
+  <button class="controls" ng-click="vm.controls.increase();">Increase Sides</button>
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+  <script src="/static/bower_components/angular/angular.min.js"></script>
+  <script src="/static/bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/controllers/UiController.js"></script>
+
+
+  <script src="/static/dist/angular-3d-carousel.js"></script>
+  <script>window.viewportUnitsBuggyfill.init();</script>
+  
+  
+	  <carousel sides="vm.sides.all" current="vm.sides.current"></carousel>
+-->
+<a href ng-click="goCats = !goCats">GLASSES</a>
+
+<div id="glasses" class="block3" ng-show="!goCats">
+		<div class="container">
+			<h2>Гравировка на бокалах</h2>
+			
+			
+			<div class="b3_line" >
+
 				<div class="b3_right">
 					<div class="glasses">
 						<div class="b3_right_top">
@@ -13,55 +50,52 @@
 							<div class="b3_right_back back_step1">< К выбору бокала</div>
 						</div>
 						<div id="carousel" class="b3_right_carousel owl-carousel">
-																		
-											<div class="b3_right_carousel_item">
-												<div class="b3_right_carousel_img"><img src="{{ url_for('static', filename='source/b02.png')}}" alt="" /></div>
-												<div class="b3_right_carousel_price">Цена <span>1300</span> руб.</div>
-												<div class="b3_right_carousel_button"><a href="main#" class="btn"><span>Далее</span></a></div>
-												<div class="b3_right_carousel_left_img"><img src="{{ url_for('static', filename='source/b02_big.png')}}" alt="" /></div>
-												<div class="b3_right_carousel_sub">
-																													
-																<div class="b3_right_carousel_item">
-																	<div class="b3_right_carousel_img"><img src="{{ url_for('static', filename='source/shablon_5_mini.png')}}" alt="" /></div>
-																	<!--<div class="b3_right_carousel_price">Цена <span>0</span> руб.</div> -->
-																	<div class="b3_right_carousel_price">Бесплатно <span></span></div> 
-																	<div class="b3_right_carousel_button"><a href="main" class="btn"><span>Далее</span></a></div>
-																	<div class="b3_right_carousel_left_img"><img src="{{ url_for('static', filename='source/shablon_5.png')}}" alt="" /></div>
-																</div>
-																
+						
+										{% for item in carousel_items %}
+										<div class="b3_right_carousel_item">
+												<div class="b3_right_carousel_img"><img src="{{ url_for('static', filename=item.img)}}" alt="" /></div>
+												<div class="b3_right_carousel_price">Цена <span>{{item.price}}</span> руб.</div>
+											<!--	-->
+											<div class="b3_right_carousel_button_n"><a href="{{item.link}}?item_id={{item.id}}" class="btn"><span>Далее</span></a></div> 
+												
+<!--<form action="/glasses" method="POST">
+	<div class="glasses">
+		<div class="login-screen">
+			
 
-																	<div class="b3_right_carousel_img"><img src="{{ url_for('static', filename='source/B_110_mini.png')}}" alt="" /></div>
-																	<!--<div class="b3_right_carousel_price">Цена <span>0</span> руб.</div> -->
-																	<div class="b3_right_carousel_price">Бесплатно <span></span></div> 
-																	<div class="b3_right_carousel_button"><a href="main" class="btn"><span>Далее</span></a></div>
-																	<div class="b3_right_carousel_left_img"><img src="{{ url_for('static', filename='source/B_110.png')}}" alt="" /></div>
-																</div>
-																
-																											</div>
+			<div class="login-form">
+				<div class="control-group" ng-show="false">
+				<h3>ID  <input type="text" class="login-field" value="{{item.id}}" placeholder="item_id" name="item_id"></h3>
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group" ng-show="false">
+				<h3>Image <input type="text" class="login-field" value="{{item.b_img}}" placeholder="item_price" name="item_img"></h3>
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+				
+				<div class="b3_right_carousel_button_n"><a href="{{item.link}}" class="btn"><input type="submit" value="Далее" class="btn btn-primary_l btn-large btn-block"></a></div>
+				
+				
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" > 
+					 
+				
+			    <br>
+			</div>
+		</div>
+	</div>
+</form> -->
+												
+												<!-- <div class="b3_right_carousel_left_img"><img src="{{ url_for('static', filename='source/b02_big.png')}}" alt="" /></div> -->
+												<div class="b3_right_carousel_sub"></div>					
 											</div>
+										{% endfor %}
+										
+										
+										
+
 																					
-
-												<div class="b3_right_carousel_img"><img src="wp-content/uploads/2017/02/b08.png" alt="" /></div>
-												<div class="b3_right_carousel_price">Цена <span>1800</span> руб.</div>
-												<div class="b3_right_carousel_button"><a href="main" class="btn"><span>Далее</span></a></div>
-												<div class="b3_right_carousel_left_img"><img src="wp-content/uploads/2017/02/b08_big.png" alt="" /></div>
-												<div class="b3_right_carousel_sub">
-																													
-																<div class="b3_right_carousel_item">
-																	<div class="b3_right_carousel_img"><img src="wp-content/uploads/2017/02/B_110_mini.png" alt="" /></div>
-																	<!--<div class="b3_right_carousel_price">Цена <span>0</span> руб.</div> -->
-																	<div class="b3_right_carousel_price">Бесплатно <span></span></div> 
-																	<div class="b3_right_carousel_button"><a href="main" class="btn"><span>Далее</span></a></div>
-																	<div class="b3_right_carousel_left_img"><img src="wp-content/uploads/2017/02/B_110.png" alt="" /></div>
-																</div>
-																
-
-																	<div class="b3_right_carousel_img"><img src="wp-content/uploads/2017/02/B_104_mini.png" alt="" /></div>
-																	<!--<div class="b3_right_carousel_price">Цена <span>0</span> руб.</div> -->
-																	<div class="b3_right_carousel_price">Бесплатно <span></span></div> 
-																	<div class="b3_right_carousel_button"><a href="main" class="btn"><span>Далее</span></a></div>
-																	<div class="b3_right_carousel_left_img"><img src="wp-content/uploads/2017/02/B_104.png" alt="" /></div>
-																</div>
+											
 																
 																											</div>
 											</div>

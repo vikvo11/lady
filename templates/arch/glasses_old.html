@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% include 'includes/blocks/_header.html' %}
+{% include 'includes/blocks/_h_menu.html' %}
+
+
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+<div class="control-group">
+<h3>item_id</h3>
+<input type="text" class="login-field" value="{{request.form.item_id}}" placeholder="item_id" name="item_id">
+<label class="login-field-icon fui-user" for="item_id"></label>
+</div>
+<div class="control-group">
+<h3>item_price</h3>
+<input type="text" class="login-field" value="{{request.form.item_price}}" placeholder="item_price" name="item_price">
+<label class="login-field-icon fui-user" for="item_price"></label>
+</div>
+
+
+
+
+<div ng-controller="CartController">
+<a ui-sref="site.cart" style="padding: 5px 0 0 0; width:150px" href="/cart" >
+<ngcart-summary></ngcart-summary>
+</a>
+</div>
+<div class="row ng-scope">
+
+<div class="col-xs-3 ng-scope">
+<div class="thumbnail">
+<img ng-src="https://ngcart.snapjay.com/img/phones/motorola-xoom-with-wi-fi.0.jpg" src="https://ngcart.snapjay.com/img/phones/motorola-xoom-with-wi-fi.0.jpg">
+                <h4 class="ng-binding">Motorola XOOM™ with Wi-Fi</h4>
+                <p class="ng-binding">The Next, Next Generation
+
+Experience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).</p>
+                <h3 class="price ng-binding">$249.99</h3>
+<ngcart-addtocart id="123" name="123" price="249.99" quantity="1" quantity-max="5" data="item"></ngcart-addtocart>
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+  
+  
+  
+  <h1>Try spinning the 3d carousel.</h1>
+
+
+
+
+{% endif %}
+<!--<link rel="stylesheet" href="/static/style.css" type="text/css"> -->
+{% endblock %}

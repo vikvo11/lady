@@ -4,9 +4,11 @@
 				<div class="mob_menu">{{mob_menu.pos0}}</div>
 				<ul>
 				{% for link,item in menu.items() %}
-				<li><a href="index.html#{{link}}">{{item}}</a></li>
+				<li><a href="{{link}}">{{item}}</a></li>
 				{% endfor %}
-				
+					<li><a ui-sref="site.cart" style="padding: 5px 0 0 0; width:150px" href="/cart">
+					<ngcart-summary></ngcart-summary>
+					</a></li>
 				</ul>
 			</div>
 		</div>

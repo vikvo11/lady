@@ -1,0 +1,109 @@
+{% extends 'layout_cart.html' %}
+
+
+
+
+{% include 'includes/blocks/_header.html' %}
+<!--
+<a ui-sref="site.cart" style="padding: 5px 0 0 0; width:150px" href="/cart">
+<ngcart-summary></ngcart-summary>
+</a> -->
+{% include 'includes/blocks/_h_menu.html' %}
+{% block body %}
+<!--
+<div class="control-group">
+<h3>item_id</h3>
+<input type="text" class="login-field" value="{{request.form.item_id}}" placeholder="item_id" name="item_id">
+<label class="login-field-icon fui-user" for="item_id"></label>
+</div>
+<div class="control-group">
+<h3>item_price</h3>
+<input type="text" class="login-field" value="{{request.form.item_price}}" placeholder="item_price" name="item_price">
+<label class="login-field-icon fui-user" for="item_price"></label>
+</div>
+-->
+
+{% if item_id == 0 %}
+{% include 'includes/blocks/_glasses.html' %}
+{%else%}	
+
+
+
+{% for car_item in carousel_items %}
+{% if car_item.id == item_id %}	
+<h2><img src="{{ url_for('static', filename=car_item.b_img)}}" alt=""></h2>
+{% endif %}
+{% endfor %}
+
+
+<div class="row ng-scope">
+{% for item in cart_items %}
+
+{% if item.id == item_id %}	
+<div class="col-xs-4 ng-scope">
+<div class="thumbnail">
+<img ng-src="{{ url_for('static', filename=item.img)}}" src="{{ url_for('static', filename=item.img)}}">
+
+                <h4 class="ng-binding">Motorola XOOM™ with Wi-Fi</h4>
+                <p class="ng-binding">The Next, Next Generation
+
+Experience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).</p>
+                <h3 class="price ng-binding">${{item.price}}</h3>
+<ngcart-addtocart id="{{item.u_id}}" name="{{item.name}}" price="{{item.price}}" quantity="1" quantity-max="5" data="item"></ngcart-addtocart>
+</div>
+
+
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+</div>
+
+
+<!--<ngcart-cart></ngcart-cart>
+
+<ngcart-checkout service="http" settings="{ url:'/start' }"></ngcart-checkout> -->
+
+
+<!--
+<form ng-submit="submit()" ng-controller="ExampleController">
+  Enter text and hit enter:
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+<form ng-submit="getResults()" ng-controller="ExampleController">
+  <input type="text" ng-model="text" name="text" />
+  <input type="text" ng-model="url" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+
+
+<div ng-controller="ListController">
+    <ol>
+      <li ng-repeat="name in names">{{'{{name}}'}} from {{'{{department}}'}}</li>
+    </ol>
+  </div>
+  -->
+  
+  
+  
+
+ 
+{% endblock %}
+<!--
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script src="{{ url_for('static', filename='bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/ngcard/dist/ngCart.js')}}"></script> 
+  <script src="{{ url_for('static', filename='js/app.js')}}"></script> 
+  <script src="{{ url_for('static', filename='js/controllers/UiController.js')}}"></script>
+
+  
+ <script src="{{ url_for('static', filename='dist/angular-3d-carousel.js')}}"></script>
+ <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script>window.viewportUnitsBuggyfill.init();</script>-->
+
+</html> 

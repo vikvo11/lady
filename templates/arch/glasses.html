@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+ <!--<html ng-app="submitExample"> -->
+
+<html ng-app="ngCart">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Arenesp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_cart.css')}}">
+  <!--<link rel="stylesheet" href="https://ngcart.snapjay.com/css/style.css""> -->
+
+  <!--Include angular-3d-carousel.css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/angular-3d-carousel.css')}}">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+</head>
+
+<body ng-controller="CartController">
+{% include 'includes/blocks/_header.html' %}
+<!--
+<a ui-sref="site.cart" style="padding: 5px 0 0 0; width:150px" href="/cart">
+<ngcart-summary></ngcart-summary>
+</a> -->
+{% include 'includes/blocks/_h_menu.html' %}
+<div class="container">
+<div class="control-group">
+<h3>item_id</h3>
+<input type="text" class="login-field" value="{{request.form.item_id}}" placeholder="item_id" name="item_id">
+<label class="login-field-icon fui-user" for="item_id"></label>
+</div>
+<div class="control-group">
+<h3>item_price</h3>
+<input type="text" class="login-field" value="{{request.form.item_price}}" placeholder="item_price" name="item_price">
+<label class="login-field-icon fui-user" for="item_price"></label>
+</div>
+
+
+<div class="row ng-scope">
+
+<div class="col-xs-3 ng-scope">
+<div class="thumbnail">
+<img ng-src="https://ngcart.snapjay.com/img/phones/motorola-xoom-with-wi-fi.0.jpg" src="https://ngcart.snapjay.com/img/phones/motorola-xoom-with-wi-fi.0.jpg">
+                <h4 class="ng-binding">Motorola XOOM™ with Wi-Fi</h4>
+                <p class="ng-binding">The Next, Next Generation
+
+Experience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).</p>
+                <h3 class="price ng-binding">$249.99</h3>
+<ngcart-addtocart id="123" name="123" price="249.99" quantity="1" quantity-max="5" data="item"></ngcart-addtocart>
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<!--<ngcart-cart></ngcart-cart>
+
+<ngcart-checkout service="http" settings="{ url:'/start' }"></ngcart-checkout> -->
+
+
+<!--
+<form ng-submit="submit()" ng-controller="ExampleController">
+  Enter text and hit enter:
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+<form ng-submit="getResults()" ng-controller="ExampleController">
+  <input type="text" ng-model="text" name="text" />
+  <input type="text" ng-model="url" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+
+
+<div ng-controller="ListController">
+    <ol>
+      <li ng-repeat="name in names">{{'{{name}}'}} from {{'{{department}}'}}</li>
+    </ol>
+  </div>
+  -->
+  
+  
+  
+  <h1>Try spinning the 3d carousel.</h1>
+ 
+</body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script src="{{ url_for('static', filename='bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/ngcard/dist/ngCart.js')}}"></script> 
+  <script src="{{ url_for('static', filename='js/app.js')}}"></script> 
+  <script src="{{ url_for('static', filename='js/controllers/UiController.js')}}"></script>
+
+  <!-- Include angular-3d-carousel.js -->
+ <script src="{{ url_for('static', filename='dist/angular-3d-carousel.js')}}"></script>
+ <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script>window.viewportUnitsBuggyfill.init();</script>
+
+</html>

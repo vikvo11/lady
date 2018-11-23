@@ -1,0 +1,70 @@
+{% extends 'layout_cart.html' %}
+
+
+
+
+{% include 'includes/blocks/_header.html' %}
+<!--
+<a ui-sref="site.cart" style="padding: 5px 0 0 0; width:150px" href="/cart">
+<ngcart-summary></ngcart-summary>
+</a> -->
+{% include 'includes/blocks/_h_menu.html' %}
+{% block body %}
+<!--
+<div class="control-group">
+<h3>item_id</h3>
+<input type="text" class="login-field" value="{{request.form.item_id}}" placeholder="item_id" name="item_id">
+<label class="login-field-icon fui-user" for="item_id"></label>
+</div>
+<div class="control-group">
+<h3>item_price</h3>
+<input type="text" class="login-field" value="{{request.form.item_price}}" placeholder="item_price" name="item_price">
+<label class="login-field-icon fui-user" for="item_price"></label>
+</div>
+-->
+
+
+
+<ngcart-cart></ngcart-cart>
+
+
+<ngcart-checkout service="log" settings="{ url:'/start' }"></ngcart-checkout>
+
+
+
+<!--<ngcart-cart></ngcart-cart>
+
+<ngcart-checkout service="http" settings="{ url:'/start' }"></ngcart-checkout> -->
+
+
+<!--
+<form ng-submit="submit()" ng-controller="ExampleController">
+  Enter text and hit enter:
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+<form ng-submit="getResults()" ng-controller="ExampleController">
+  <input type="text" ng-model="text" name="text" />
+  <input type="text" ng-model="url" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{'{{list}}'}}</pre>
+</form>
+
+
+
+<div ng-controller="ListController">
+    <ol>
+      <li ng-repeat="name in names">{{'{{name}}'}} from {{'{{department}}'}}</li>
+    </ol>
+  </div>
+  -->
+  
+  
+  
+
+ 
+{% endblock %}
+
+
