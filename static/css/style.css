@@ -120,12 +120,15 @@ input, textarea, button { font-family: 'ProximaNova'; }
 					.b3_right_carousel_item:hover .b3_right_carousel_img { top: 14px; }
 					.b3_right_carousel_price { margin: 282px 0 0; font-size: 18px; font-weight: 300; color: #333333; opacity: 0; -webkit-transition: all 300ms; transition: all 300ms; }
 						.b3_right_carousel_item:hover .b3_right_carousel_price { opacity: 1; }
+						
 					.b3_right_carousel_button { margin: 5px 0 0; }
 						.b3_right_carousel_button a.btn { opacity: 0; }
 							.b3_right_carousel_button a.btn span { padding: 7.5px 42px; }
+							
 					.b3_right_carousel_button_n { margin: 5px 0 0; }
 						.b3_right_carousel_button_n a.btn { opacity: 0; }
 							.b3_right_carousel_button_n a.btn span { padding: 7.5px 42px; }
+							
 						.b3_right_carousel_item:hover .b3_right_carousel_button a.btn { opacity: 1; }
 						.b3_right_carousel_item:hover .b3_right_carousel_button_n a.btn { opacity: 1; }
 			.b3_right_text { padding: 17px 0 0; font-size: 24px; color: #4f4f4f; font-weight: 300; line-height: 27px; }
@@ -263,6 +266,7 @@ input, textarea, button { font-family: 'ProximaNova'; }
 				.textarea_row .label { line-height: 21px; font-size: 17px; }
 				
 	.b3_right_carousel_price, .b3_right_carousel_button a.btn { opacity: 1; }
+	.b3_right_carousel_price, .b3_right_carousel_button_n a.btn { opacity: 1; }
 	.b3_right_carousel_item:hover { border: 1px solid transparent; }
 	.b3_right_carousel_img { top: 0; position: relative; margin: 14px 0 10px; }
 	.b3_right_carousel_price { margin: 0; }
