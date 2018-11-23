@@ -22,7 +22,7 @@
 <label class="login-field-icon fui-user" for="item_price"></label>
 </div>
 
-{% include 'includes/blocks/_carts.html' %}	
+
 -->
 
 {% if item_id == 0 %}
@@ -37,45 +37,8 @@
 {% endif %}
 {% endfor %}
 
-<div id="glasses" class="block3" ng-show="!goCats">
-		<div class="container">
-			<div class="b3_line" >
-				<div class="b3_right">
-					<div class="glasses">
-						<div class="b3_right_top">
-							
-							<div class="b3_right_back back_step1">< К выбору бокала</div>
-						</div>
-						<div id="carousel" class="b3_right_carousel owl-carousel">
-						
-										{% for item in cart_items %}
 
-										{% if item.id == item_id %}
-										<div class="b3_right_carousel_item">
-												
-											<div class="thumbnail">
-											<img ng-src="{{ url_for('static', filename=item.img)}}" src="{{ url_for('static', filename=item.img)}}">
-
-											<h4 class="ng-binding">Motorola XOOM™ with Wi-Fi</h4>
-											<p class="ng-binding">The Next, Next Generation
-											Experience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).</p>
-											<h3 class="price ng-binding">${{item.price}}</h3>
-											<ngcart-addtocart id="{{item.u_id}}" name="{{item.name}}" price="{{item.price}}" quantity="1" quantity-max="5" data="item"></ngcart-addtocart>
-										</div>
-												
-										</div>
-										{% endif %}
-										{% endfor %}
-											</div>
-											</div>
-
-											</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+{% include 'includes/blocks/_carts.html' %}	
 
 
 
